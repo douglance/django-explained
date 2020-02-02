@@ -2,33 +2,41 @@
 import socket
 
 # Initialize the socket
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s = socket.socket()
 
-# Tells the socket that it can be reused
+# Configure socket options
+# SOL_SOCKET targets the socket layer itself
+# SO_REUSEADDR tells the socket that it can be reused
+# 1 sets the SO_REUSEADDR to True
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
 # The port we want to use
+# The range of ports is 16 bit unsigned integers: 0 - 65,535
 PORT = 8080
 
-# Tells OS to route packets here
+# Tells our OS to route packets here
 s.bind(("0.0.0.0", PORT))
 
-# Activates the socket
+# Activates the socket with a backlog of 10
 s.listen(10)
 
-# Our response
+# Our HTTP response
+# the b converts the string to bytes
 http_response = b"""\
 HTTP/1.1 200 OK
 
 Hello, World!"""
 
+# Prints out this message to the terminal
 print(f'Server Running on port {PORT}')
-# Wait for a connection
+
+# Endless loop to wait for a connection
 while True:
     conn, address = s.accept()  # Request comes in
+    # Receives the data from the request with buffer of 1024
     conn.recv(1024)
-    conn.sendall(http_response)        # Sends the response
-    conn.close()                    # Closes connection
+    conn.sendall(http_response)  # Sends the response
+    conn.close()                # Closes connection
 
 s.close()  # Closes socket
 
