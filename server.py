@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
+# Importing socket from the standard library
 import socket
 
 # Initialize the socket
 s = socket.socket()
 
 # Configure socket options
-# SOL_SOCKET targets the socket layer itself
-# SO_REUSEADDR tells the socket that it can be reused
+# SOL_SOCKET targets the socket layer
+# SO_REUSEADDR says the socket can be reused
 # 1 sets the SO_REUSEADDR to True
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
@@ -25,7 +26,7 @@ s.listen(10)
 http_response = b"""\
 HTTP/1.1 200 OK
 
-Hello, World!"""
+Hello Taylor"""
 
 # Prints out this message to the terminal
 print(f'Server Running on port {PORT}')
