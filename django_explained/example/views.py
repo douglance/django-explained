@@ -23,7 +23,7 @@ def function_based_view(request):
 # Class-based Views
 
 class ClassBasedView(View):
-    text = "Hello, world from a class-based view!"
+    text = "Hello world from a class-based view!"
 
     def get(self, request):
         return render(request, 'class.html', {'text': self.text})

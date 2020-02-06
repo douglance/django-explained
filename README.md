@@ -43,5 +43,15 @@ First released July 21, 2005.
 ## Example App Demo
 
 - [ ] Models
+- [ ] Views
+- [ ] Templates
 
 ## Todo App Demo
+
+- [ ] Models
+- [ ] Views
+- [ ] Templates
+
+## Next Steps
+
+- Django Rest Framework

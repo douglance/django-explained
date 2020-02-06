@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'on=gusz6i(ib(w=_+jv_6v!*h5zm$s_wvf(1prpc_tf-kc8b1$'
-
+INTERNAL_IPS = '127.0.0.1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     'example',
     'todo',
     'crispy_forms',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
