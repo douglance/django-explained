@@ -1,7 +1,18 @@
 from django.apps import AppConfig
 
-# This file is used to configure this app itself.
-# Rarely used.
+
+""" 
+apps.py
+
+https://docs.djangoproject.com/en/3.0/ref/applications/#configuring-applications
+
+This file is used to configure this Django "app" itself.
+
+Rarely used. 
+
+I've only used it to set up a verbose name.
+
+"""
 
 
 class ExampleConfig(AppConfig):

@@ -4,6 +4,8 @@
 
 Django is a web framework for building web-based applications using Python.
 
+First released July 21, 2005.
+
 ## Why use Django
 
 - Easy to use

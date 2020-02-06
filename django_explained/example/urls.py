@@ -2,7 +2,14 @@ from django.urls import path
 
 from . import views
 
-# These are your routes
+"""
+urls.py
+
+This is where you set up your routes.
+
+Routes assign incoming requests to Views. 
+
+"""
 
 urlpatterns = [
     path('',  views.function_based_view, name='function_based_view'),

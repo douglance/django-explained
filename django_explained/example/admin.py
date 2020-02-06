@@ -2,13 +2,19 @@ from django.contrib import admin
 
 from .models import Example
 
-# This is where you "register" your models for the admin.
 
-# You can configure your admin items
+""" 
+Django Admin
+https://docs.djangoproject.com/en/3.0/ref/contrib/admin/
 
-# list_display
-# form widgets
-#
+This is where you "register" your models for the admin.
+
+Options:
+    - fields
+    - list_display
+    - form widgets
+    
+"""
 
 
 @admin.register(Example)
