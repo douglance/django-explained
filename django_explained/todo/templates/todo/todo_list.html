@@ -1,26 +1,25 @@
-{% extends "base.html" %}
-
+{% extends "base.html" %} 
 {% block content %}
 <div class="container m-2">
-  {% if "incomplete" in request.path %}
-  <a href="{% url "todo_list"%}" class="btn btn-secondary">Show Complete</a>
-  {% else %}
-  <a href="{% url "todo_incomplete_list"%}" class="btn btn-secondary">Hide Complete</a>
-  {% endif %}
+    {% if "incomplete" in request.path %}
+    <a href="{% url "todo_filtered_list" 'complete' %}" class="btn btn-secondary">Show Complete</a> {% else %}
+    <a href="{% url "todo_filtered_list" 'incomplete' %}" class="btn btn-secondary">Hide Complete</a> {% endif %}
+    <a href="{% url "todo_list" %}" class="btn btn-secondary">Show All</a> 
+    <a href="{% url "todo_filtered_list" 'overdue' %}" class="btn btn-secondary">Show Overdue</a> 
 </div>
 <table class="table">
-  <tr class="d-flex">
-    <th class="col-1 text-center">Status</th>
-    <th class="col-3">Task</th>
-    <th class="col-3">Created Date</th>
-    <th class="col-3">Due Date</th>
-    <th class="col-1 text-center">Update</th>
-    <th class="col-1 text-center">Delete</th>
-  </tr>
-  {% for todo in todos %}
-  <tr class="d-flex">
-    <td class="col-1 text-center">
-      <a href="{% url "todo_complete" todo.id %}">
+    <tr class="d-flex">
+        <th scope="col" class="col-1 text-center">Done</th>
+        <th scope="col" class="col-3">Task</th>
+        <th scope="col" class="col-3">Created Date</th>
+        <th scope="col" class="col-3">Due Date</th>
+        <th scope="col" class="col-1 text-center">Update</th>
+        <th scope="col" class="col-1 text-center">Delete</th>
+    </tr>
+    {% for todo in todos %}
+    <tr class="d-flex">
+        <td class="col-1 text-center">
+            <a href="{% url "todo_complete" todo.id %}">
         {% if todo.done %}
         <i class="fas fa-check-square"></i>
         {% else %}
@@ -37,6 +36,4 @@
 </table>
 <a class="btn btn-success  btn-lg btn-block" href="{% url "todo_create" %}">
   <i class="fas fa-plus"></i> Create New Task
-</a>
-
-{% endblock %}
+</a> {% endblock %}

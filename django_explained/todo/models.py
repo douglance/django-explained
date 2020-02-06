@@ -16,8 +16,9 @@ class Todo (models.Model):
     def is_past_due(self):
         return now() > self.due
 
+    def toggle_done(self):
+        self.done = not self.done
+        self.save()
+
     def __str__(self):
         return self.task
-
-    def get_absolute_url(self):
-        return "/todo"

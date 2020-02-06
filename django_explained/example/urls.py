@@ -1,5 +1,8 @@
 from django.urls import path
+
 from . import views
+
+# These are your routes
 
 urlpatterns = [
     path('',  views.function_based_view, name='function_based_view'),

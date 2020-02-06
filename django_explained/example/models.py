@@ -17,3 +17,6 @@ class Example(models.Model):
     # UUIDField
 
     # See all field types here: https://docs.djangoproject.com/en/3.0/ref/models/fields/#field-types
+
+    def example_method(self):
+        return self.text + " example"

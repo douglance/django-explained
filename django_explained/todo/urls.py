@@ -1,8 +1,11 @@
 from django.urls import path
+
 from . import views
 
 urlpatterns = [
     path('',  views.TodoListView.as_view(), name='todo_list'),
+    path('list/<str:filter>',  views.TodoListView.as_view(),
+         name='todo_filtered_list'),
     path('incomplete',  views.TodoIncompleteListView.as_view(),
          name='todo_incomplete_list'),
     path('create',  views.TodoCreateView.as_view(), name='todo_create'),
