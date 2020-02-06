@@ -4,4 +4,4 @@ from .models import Todo
 
 @admin.register(Todo)
 class TodoAdmin(admin.ModelAdmin):
-    list_display = ['task', 'done']
+    list_display = ['task', 'done', 'due']

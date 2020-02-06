@@ -6,10 +6,12 @@ from .models import Todo
 
 class TodoListView(ListView):
     model = Todo
+    context_object_name = 'todos'
 
 
 class TodoIncompleteListView(ListView):
     model = Todo
+    context_object_name = 'todos'
     queryset = Todo.objects.filter(done=False)
 
 
@@ -20,12 +22,12 @@ class TodoDeleteView(DeleteView):
 
 class TodoCreateView(CreateView):
     model = Todo
-    fields = ['task']
+    fields = ['task', 'due']
 
 
 class TodoUpdateView(UpdateView):
     model = Todo
-    fields = ['task', 'done']
+    fields = ['task', 'due', 'done']
 
 
 def todo_complete_view(request, pk):

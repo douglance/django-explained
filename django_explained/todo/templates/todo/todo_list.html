@@ -2,18 +2,22 @@
 
 {% block content %}
 <div class="container m-2">
-  <a href="{% url "todo_incomplete_list"%}" class="btn btn-secondary">Hide Complete</a>
+  {% if "incomplete" in request.path %}
   <a href="{% url "todo_list"%}" class="btn btn-secondary">Show Complete</a>
+  {% else %}
+  <a href="{% url "todo_incomplete_list"%}" class="btn btn-secondary">Hide Complete</a>
+  {% endif %}
 </div>
 <table class="table">
   <tr class="d-flex">
     <th class="col-1 text-center">Status</th>
-    <th class="col-6">Task</th>
+    <th class="col-3">Task</th>
     <th class="col-3">Created Date</th>
+    <th class="col-3">Due Date</th>
     <th class="col-1 text-center">Update</th>
     <th class="col-1 text-center">Delete</th>
   </tr>
-  {% for todo in object_list %}
+  {% for todo in todos %}
   <tr class="d-flex">
     <td class="col-1 text-center">
       <a href="{% url "todo_complete" todo.id %}">
@@ -23,14 +27,16 @@
         <i class="far fa-square"></i>
         {% endif %}
     </td>
-    <td class="col-6">{{ todo.task }}</td>
+    <td class="col-3">{{ todo.task }}</td>
     <td class="col-3">{{ todo.created }}</td>
+    <td class="col-3 {% if todo.is_past_due%}text-danger{% endif %}">{{ todo.due }}</td>
     <td class="col-1 text-center"><a href="{% url "todo_update" todo.id %}"><i class="fas fa-edit"></i></td>
     <td class="col-1 text-center"><a href="{% url "todo_delete" todo.id  %}"><i class="fas fa-trash"></i></td>
   </tr>
   {% endfor %}
 </table>
-<a class="btn btn-success  btn-lg btn-block" href="{% url "todo_create" %}"><i class="fas fa-plus"></i> Create New
-  Task</a>
+<a class="btn btn-success  btn-lg btn-block" href="{% url "todo_create" %}">
+  <i class="fas fa-plus"></i> Create New Task
+</a>
 
 {% endblock %}
