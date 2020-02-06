@@ -1,18 +1,23 @@
 # Django Explained
 
+[Repo](https://github.com/douglance/django-explained)
+
 ## What is Django
 
 Django is a web framework for building web-based applications using Python.
 
-First released July 21, 2005.
+- Created at a newspaper company.
+- Named after Django Reinhardt.
+- First released July 21, 2005.
+- Version 3.0 released December 2019
 
 ## Why use Django
 
 - Easy to use
 - Batteries-included
 - Well documented
-- Open-source
 - Django Admin
+- Open-source
 - Secure
 - Strong ecosystem
 - Great ORM system
@@ -24,7 +29,7 @@ First released July 21, 2005.
 - Pinterest
 - Disqus
 - National Geographic
-- Many others...
+- Many others: 47k stars on GitHub
 
 ## Getting Started
 
@@ -45,6 +50,7 @@ First released July 21, 2005.
 - [ ] Models
 - [ ] Views
 - [ ] Templates
+- [ ] Settings
 
 ## Todo App Demo
 
@@ -54,4 +60,9 @@ First released July 21, 2005.
 
 ## Next Steps
 
-- Django Rest Framework
+- [Django Docs](https://docs.djangoproject.com/en/3.0/)
+- [DjangoCon US](https://www.youtube.com/channel/UC0yY6a79pPY9J0ShIHRf6yw)
+- [DjangoCon Europe](https://www.youtube.com/user/djangoconeurope)
+- [Two Scoops of Django](https://www.amazon.com/Two-Scoops-Django-Best-Practices/dp/0981467342)
+- [High Performance Django](https://www.amazon.com/dp/1508748128)
+- [Django Rest Framework](https://www.django-rest-framework.org/)
