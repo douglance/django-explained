@@ -1,14 +1,20 @@
-# Django Explained
+# Django Explained: Beginners Guide to Python Web Development
 
 [Repo](https://github.com/douglance/django-explained)
+
+## Who Am I
+
+- Fullstack Engineer @Arbormoon
+- First wrote Python in 2006
+- Building Django apps for ~5 years
 
 ## What is Django
 
 Django is a web framework for building web-based applications using Python.
 
-- Created at a newspaper company.
-- Named after Django Reinhardt.
-- First released July 21, 2005.
+- Created at a newspaper company
+- Named after Django Reinhardt
+- First released July 21, 2005
 - Version 3.0 released December 2019
 
 ## Why use Django
@@ -39,24 +45,33 @@ Django is a web framework for building web-based applications using Python.
    2. `virtualenv venv`
    3. `source venv/bin/activate`
 3. Install Django with pip:
-   1. `pip install Django==3.0.2`
+   - `pip install Django==3.0.2`
 4. Start a new Django project:
-   1. `django-admin startproject $PROJECT_NAME`
+   - `django-admin startproject $PROJECT_NAME`
 5. Start a new Django app:
-   1. `python manage.py startapp $APP_NAME`
+   - `python manage.py startapp $APP_NAME`
+
+## Project Overview
+
+- manage.py
+- settings.py
+- MVC
 
 ## Example App Demo
 
-- [ ] Models
-- [ ] Views
-- [ ] Templates
-- [ ] Settings
+- Models
+- Views
+- Templates
+- URLs
+- Tests
 
 ## Todo App Demo
 
-- [ ] Models
-- [ ] Views
-- [ ] Templates
+- Models
+- Views
+- Templates
+- URLs
+- Tests
 
 ## Next Steps
 
