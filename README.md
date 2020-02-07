@@ -5,7 +5,8 @@
 ## Who Am I
 
 - Fullstack Engineer @Arbormoon
-- First wrote Python in 2006
+- [@dougwlance](https://twitter.com/dougwlance)
+- Writing Python for ~14 years
 - Building Django apps for ~5 years
 
 ## What is Django
